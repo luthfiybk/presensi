@@ -1,0 +1,38 @@
+#side_nav {
+    background-color: white;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration {
+    border-radius: 0;
+}
+
+.form-registration .form-floating {
+    margin-bottom: 1rem;
+}
+
+.button{
+    color: red,
+    
+}
