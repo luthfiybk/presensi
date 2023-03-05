@@ -13,10 +13,10 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card">
-          <div class="card-body" onload="getLocation()">
-            <div id="map">
+          <div class="card-body">
+            <div id="map-presensi">
             </div>
-            {{-- @if(strtotime(date('H:i:s')) >= strtotime(config('absensi.jam_masuk') . ' -1 hours') && strtotime(date('H:i:s')) <= strtotime(config('absensi.jam_pulang'))) --}}
+            <!-- @if(strtotime('now') >= strtotime(config('absensi.jam_masuk')) && strtotime(date('H:i:s')) <= strtotime(config('absensi.jam_pulang'))) -->
                 <form action="/presensi" method="POST">
                     @csrf
                     <h3 style="text-align: center">Presensi</h3>
@@ -28,30 +28,15 @@
                         <h5 style="text-align: center">Longitude: <input name="longitude" style="border: none" disabled="disabled"></h5>
                     </div>
                 </form>
-            {{-- @elseif(strtotime('now') >= strtotime(config('absensi.jam_pulang'))) --}}
-                    {{-- <form action="/presensi/{presensi}" method="POST">
+            <!-- @elseif(strtotime('now') >= strtotime(config('absensi.jam_pulang')))
+                    <form action="/presensi/{presensi}" method="POST">
                         @csrf @method('patch')
                         <h3 style="text-align: center">Check-Out</h3>
                         <div class="btn-presensi" style="text-align: center">
                             <button class="btn btn-warning" type="submit"><i class="fas fa-paper-plane"></i><span>Pulang</span></button>
                         </div>
-                    </form> --}}
-            {{-- @endif --}}
-            {{-- @else
-                @if(strtotime('now') >= strtotime(config('absensi.jam_pulang')))
-                <form action="/presensi" method="POST">
-                    @csrf @method('patch')
-                    <h3 style="text-align: center">Presensi</h3>
-                    <div class="btn-presensi" style="text-align: center">
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i><span>Presensi</span></button>
-                    </div>
-                    <div class="location" style="text-align: center">
-                        <h5 style="text-align: center">Latitude: <input name="latitude" style="border: none"></h5>
-                        <h5 style="text-align: center">Longitude: <input name="longitude" style="border: none"></h5>
-                    </div>
-                </form>
-                @endif
-            @endif --}}
+                    </form>
+            @endif -->
           </div>
         </div>
       </div>

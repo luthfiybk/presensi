@@ -5987,6 +5987,10 @@ h3.page-sub-title {
     }
 }
 
-#map {
+#map-presensi {
+    height: 400px;
+}
+
+#map-admin {
     height: 400px;
 }

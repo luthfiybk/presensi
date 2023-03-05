@@ -23,8 +23,9 @@ class KaryawanController extends Controller
             $presensi = Presensi::where('id_karyawan', auth()->user()->id_karyawan)->get();
         }       
         return view('karyawan.dashboard', [
-            'title' => 'Dashboard',
-            'presensis' => $presensi
+            'title' => 'Riwayat Presensi',
+            'presensis' => $presensi,
+            'active' => 'Riwayat Presensi'
         ]);
     }
 
@@ -55,9 +56,7 @@ class KaryawanController extends Controller
 
     public function getLocation()
     {
-        $ip = $this->getIp();
-        $data = Location::get($ip);
-        return view('karyawan.presensi', compact('data'), [
+        return view('karyawan.presensi', [
             'title' => 'Presensi',
             'active' => 'presensi'
         ]);

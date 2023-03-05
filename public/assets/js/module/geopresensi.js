@@ -1,7 +1,7 @@
 
 window.onload = function() {
     var popup = L.popup();
-    var geolocationMap = L.map('map', {
+    var geolocationMap = L.map('map-presensi', {
         layers: MQ.mapLayer(),
         center: [40.731701, -73.993411],
         zoom: 18

@@ -8,8 +8,8 @@
         <li class="{{ ($title === 'Register') ? 'active' : '' }}">
           <a href="/register"><i class="fas fa-book"></i> <span>Register</span></a>
         </li>
-        <li class="{{ ($title === 'Tambahkan Lokasi') ? 'active' : '' }}">
-          <a href="/tambah-lokasi"><i class="fas fa-location-arrow"></i> <span>Tambahkan Lokasi</span></a>
+        <li class="{{ ($title === 'Tambah Lokasi') ? 'active' : '' }}">
+          <a href="/tambah-lokasi"><i class="fas fa-location-arrow"></i> <span>Tambah Lokasi</span></a>
         </li>
       </ul>
     </div>

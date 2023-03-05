@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}" />
   </head>
 
-  <body onload="getLocation()">
+  <body>
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
@@ -59,7 +59,7 @@
     </div>
     
     <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script>
-    <script src="{{ asset('assets/js/module/geolocation.js') }}"></script>
+    <script src="{{ asset('assets/js/module/geopresensi.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>

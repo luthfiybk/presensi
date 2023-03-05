@@ -51,4 +51,5 @@ Route::patch('/presensi/{presensi}', [PresensiController::class, 'Pulang'])->mid
 
 //Admin
 Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth', 'isAdmin');
-Route::get('/tambah-lokasi', [AdminController::class], 'tambahLokasi');
+Route::get('/tambah-lokasi', [AdminController::class, 'getLokasi']);
+Route::post('/tambah-lokasi', [AdminController::class, 'tambahLokasi']);
