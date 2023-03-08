@@ -24,19 +24,27 @@ class AdminController extends Controller
     }
     
     public function tambahLokasi(Request $request){
-    
         $validatedData = $request->validate([
             'nama' => 'required',
             'latitude' => 'required',
             'longitude' => 'required'
         ]);
+
+
+        Gedung::create($validatedData);
+        
+        return redirect('/admin/tambah-lokasi')->with('success', 'Tambah Lokasi berhasil!');
+
     }
 
     public function getLokasi(Request $request)
     {
+        $gedung = Gedung::all();
         return view('admin.tambahLokasi', [
             'title' => 'Tambah Lokasi',
+            'gedungs' => $gedung,
             'active' => 'Tambah Lokasi'
         ]);
+
     }
 }

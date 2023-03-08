@@ -36,20 +36,23 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']); 
 
 //Karyawan
-Route::get('/profil', function () {
+Route::get('/karyawan/profil', function () {
     return view('karyawan.profil', [
         'title' => 'Detail Profil',
         'karyawan' => Karyawan::where('email', auth()->user()->email)->first(),
     ]);
 })->middleware('auth', 'isKaryawan');
 
-Route::get('/dashboardkar', [KaryawanController::class, 'index'])->middleware('auth', 'isKaryawan');
+Route::get('/karyawan/riwayat-presensi', [KaryawanController::class, 'index'])->middleware('auth', 'isKaryawan');
 
-Route::get('/presensi', [KaryawanController::class, 'getLocation'])->middleware('auth', 'isKaryawan');
-Route::post('/presensi', [PresensiController::class, 'Masuk'])->middleware('auth', 'isKaryawan');
-Route::patch('/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
+// Route::resource('location', LocationController::class);
+Route::get('/karyawan/presensi', [PresensiController::class, 'index'])->middleware('auth', 'isKaryawan');
+Route::post('/karyawan/presensi', [PresensiController::class, 'Masuk'])->middleware('auth', 'isKaryawan');
+Route::patch('/karyawan/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
 
 //Admin
-Route::get('/dashboard', [AdminController::class, 'index'])->middleware('auth', 'isAdmin');
-Route::get('/tambah-lokasi', [AdminController::class, 'getLokasi']);
-Route::post('/tambah-lokasi', [AdminController::class, 'tambahLokasi']);
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware('auth', 'isAdmin');
+Route::get('/admin/tambah-lokasi', [AdminController::class, 'getLokasi'])->middleware('auth', 'isAdmin');
+Route::post('/admin/tambah-lokasi', [AdminController::class, 'tambahLokasi'])->middleware('auth', 'isAdmin');
+
+Route::get('/data', [LocationController::class, 'getDataJson']);

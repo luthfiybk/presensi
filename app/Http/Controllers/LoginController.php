@@ -28,9 +28,9 @@ class LoginController extends Controller
         if (auth()->attempt($validatedData)) {
             $request->session()->regenerate();
             if (auth()->user()->role == 'admin') {
-                return redirect('/dashboard')->content('admin.dashboard');
+                return redirect('/admin/dashboard')->content('admin.dashboard');
             } else if (auth()->user()->role == 'karyawan') {
-                return redirect('/dashboardkar')->content('karyawan.dashboard');
+                return redirect('/karyawan/riwayat-presensi')->content('karyawan.dashboard');
             }
         }
 

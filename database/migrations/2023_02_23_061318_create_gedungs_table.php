@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('gedungs', function (Blueprint $table) {
             $table->id('gedung_id');
             $table->string('nama');
-            $table->double('latitude');
-            $table->double('longitude');
+            $table->double('latitude', 12,5);
+            $table->double('longitude', 12,5);
+            $table->timestamps();
         });
     }
 

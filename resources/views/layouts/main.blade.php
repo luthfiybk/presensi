@@ -12,7 +12,8 @@
     <link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/morris/morris.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-
+    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}" />
   </head>
 
@@ -51,7 +52,6 @@
       @yield('container')
     </div>
     
-    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>

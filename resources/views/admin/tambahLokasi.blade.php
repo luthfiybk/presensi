@@ -16,21 +16,42 @@
             <h3 style="text-align: center">Tambah Lokasi Gedung</h3>
             <div id="map-admin">
             </div>
-                <form action="/tambah-lokasi" method="POST">
+                <form action="{{ url('admin/tambah-lokasi') }}" method="POST">
                     @csrf
-                    {{-- <h3 style="text-align: center">Tambah Lokasi Gedung</h3> --}}
-                    {{-- <div class="btn-presensi" style="text-align: center">
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i><span>Presensi</span></button>
-                    </div> --}}
                     <div class="location" style="text-align: center; align-items:center; justify-content: center">
-                        <h5 style="text-align: center; align-items:center; justify-content: center">Nama Gedung:<input name="name" style="border-radius: 5px"></h5>
-                        <h5 style="text-align: center; align-items:center; justify-content: center">Latitude: <input name="latitude" style="border: none" disabled="disabled"></h5>
-                        <h5 style="text-align: center; align-items:center; justify-content: center">Longitude: <input name="longitude" style="border: none" disabled="disabled"></h5>
+                      <h5 style="text-align: center; align-items:center; justify-content: center">Nama Gedung:<input name="nama" id="nama" required style="border-radius: 5px"></h5>
+                    </div>
+                    <div id="location" class="location" style="text-align: center; align-items:center; justify-content: center">
+                        <input name="latitude" required type="hidden" style="border: none; background-color: #fff" >
+                        <input name="longitude" required type="hidden" style="border: none; background-color: #fff">
                     </div>
                     <div class="btn-presensi" style="text-align: center">
                         <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i><span>Tambah Lokasi</span></button>
                     </div>
                 </form>
+                <h3 style="text-align:center">Lokasi yang Telah Terdaftar</h3>
+                <table class="datatable table table-stripped">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Nama</th>
+                      <th>Latitude</th>
+                      <th>Longitude</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($gedungs as $gedung)
+                      <tr>
+                        <td>
+                          <h2 class="table-avatar">
+                            <a>{{$gedung->nama}}</a>
+                          </h2>
+                        </td>
+                        <td>{{$gedung->latitude}}</td>
+                        <td>{{$gedung->longitude}}</td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
           </div>
         </div>
       </div>

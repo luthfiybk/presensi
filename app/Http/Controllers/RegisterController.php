@@ -53,6 +53,6 @@ class RegisterController extends Controller
         }
 
         // redirect to login page
-        return redirect('/dashboard')->with('success','Register success, please login');
+        return redirect('/admin/dashboard')->with('success','Register success, please login');
     } 
 }

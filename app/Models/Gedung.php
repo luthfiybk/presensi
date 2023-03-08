@@ -10,9 +10,9 @@ class Gedung extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama' => 'required',
-        'latitude' => 'required',
-        'longitude' => 'required'
+        'nama',
+        'latitude',
+        'longitude'
     ];
 }
 

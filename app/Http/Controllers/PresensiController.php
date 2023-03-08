@@ -17,6 +17,10 @@ class PresensiController extends Controller
 
     public function index()
     {
+        return view('karyawan.presensi', [
+            'title' => 'Presensi',
+            'active' => 'Presensi'
+        ]);
         
     }
 
@@ -26,7 +30,8 @@ class PresensiController extends Controller
     }
 
     public function Masuk(Request $request)
-    {
+    {   
+        
         $validatedData = $request->validate([
             'latitude' => 'required',
             'longitude' => 'required'
@@ -37,7 +42,7 @@ class PresensiController extends Controller
         $radius = 0.05;
         
         $data = DB::table('gedungs')
-                ->select('gedungs.id',
+                ->select('gedungs.gedung_id',
                 DB::raw("6371 * acos(cos(radians(".$lat.")) * cos(radians(gedungs.latitude)) * cos(radians(gedungs.longitude) - radians(".$lng.")) + sin(radians(".$lat.")) * sin(radians(gedungs.latitude))) AS distance"))
                 ->having('distance', '<=', $radius)
                 ->get();
@@ -56,9 +61,9 @@ class PresensiController extends Controller
             }
             $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
             
-            return redirect('/dashboardkar')->with('success', 'Presensi sukses!');
+            return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
         } else {
-            return redirect('/presensi')->with('error', 'Presensi gagal!');
+            return redirect('/karyawan/presensi')->with('error', 'Presensi gagal!');
         }
     
         // $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->where('id_karyawan', auth()->user()->id_karyawan)->first();
@@ -74,7 +79,7 @@ class PresensiController extends Controller
         // }
         // $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
 
-        // return redirect('/dashboardkar')->with('success', 'Presensi sukses!');
+        // return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
     }
 
     public function Pulang()
@@ -85,6 +90,6 @@ class PresensiController extends Controller
 
         Presensi::whereDate('tanggal', '=' , date('Y-m-d'))->update($data);
 
-        return redirect('/dashboardkar')->with('success', 'Presensi sukses!');
+        return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
     }
 }

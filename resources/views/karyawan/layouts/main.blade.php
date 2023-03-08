@@ -12,9 +12,10 @@
     <link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/morris/morris.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    
+    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> --}}
+    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}" />
   </head>
@@ -23,8 +24,8 @@
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
-          <a href="/dashboardkar" class="logo"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" width="50" height="70" alt="logo" /> <span class="logoclass">SPK</span> </a>
-          <a href="/dashboardkar" class="logo logo-small"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" alt="Logo" width="30" height="30" /> </a>
+          <a href="/karyawan/riwayat-presensi" class="logo"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" width="50" height="70" alt="logo" /> <span class="logoclass">SPK</span> </a>
+          <a href="/karyawan/riwayat-presensi" class="logo logo-small"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" alt="Logo" width="30" height="30" /> </a>
         </div>
         <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
         <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
@@ -45,7 +46,7 @@
                   <p class="text-muted mb-0">Karyawan</p>
                 </div>
               </div>
-              <a class="dropdown-item ml-3 mt-1" href="/profil">My Profile</a>
+              <a class="dropdown-item ml-3 mt-1" href="/karyawan/profil">My Profile</a>
               <form action="/logout" method="POST" class="m-3">
                 @csrf
                 <button type="submit" class="dropdown-item">Logout</button>
@@ -58,9 +59,12 @@
       @yield('container')
     </div>
     
-    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg9zYlu1vmOlHmPtvYC1WkfN8C6IbrZqA&callback=initMap&v=weekly"
+      defer
+    ></script>
+    {{-- <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script> --}}
     <script src="{{ asset('assets/js/module/geopresensi.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
