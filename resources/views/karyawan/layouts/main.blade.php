@@ -60,7 +60,7 @@
     </div>
     
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg9zYlu1vmOlHmPtvYC1WkfN8C6IbrZqA&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API&callback=initMap&v=weekly"
       defer
     ></script>
     {{-- <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script> --}}
