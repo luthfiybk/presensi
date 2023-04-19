@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('nama');
             $table->double('latitude', 12,5);
             $table->double('longitude', 12,5);
-            $table->timestamps();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\IzinController;
 use App\Http\Controllers\LocationController;
 use App\Models\Presensi;
 
@@ -49,6 +50,8 @@ Route::get('/karyawan/riwayat-presensi', [KaryawanController::class, 'index'])->
 Route::get('/karyawan/presensi', [PresensiController::class, 'index'])->middleware('auth', 'isKaryawan');
 Route::post('/karyawan/presensi', [PresensiController::class, 'Masuk'])->middleware('auth', 'isKaryawan');
 Route::patch('/karyawan/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
+Route::get('/karyawan/pengajuan-izin', [IzinController::class, 'index'])->middleware('auth', 'isKaryawan');
+Route::post('/karyawan/pengajuan-izin', [IzinController::class, 'postIzin'])->middleware('auth', 'isKaryawan');
 
 //Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware('auth', 'isAdmin');

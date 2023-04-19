@@ -24,7 +24,7 @@
                 </form>
             @elseif(strtotime('now') >= strtotime(config('absensi.jam_pulang')))
                     <form action="/karyawan/presensi/{presensi}" method="POST">
-                        @csrf @method('patch')
+                        @csrf @method('put')
                         <h3 style="text-align: center">Check-Out</h3>
                         <div class="btn-presensi" style="text-align: center">
                             <button class="btn btn-warning" type="submit"><i class="fas fa-paper-plane"></i><span>Pulang</span></button>

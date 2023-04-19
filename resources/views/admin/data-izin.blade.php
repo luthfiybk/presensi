@@ -7,10 +7,10 @@
       <div class="row align-items-center">
         <div class="col">
           <div class="mt-5">
-            <h3 class="page-title">Data Presensi</h3>
+            <h3 class="page-title">Data Pengajuan Izin</h3>
             <ul class="breadcrumb">
               <li class="breadcrumb-item"></li>
-              <li class="breadcrumb-item active">Data Presensi</li>
+              <li class="breadcrumb-item active">Data Pengajuan Izin</li>
             </ul>
           </div>
         </div>
@@ -28,23 +28,21 @@
                     <th class="text-center">Nama</th>
                     <th class="text-center">ID Karyawan</th>
                     <th>Tanggal</th>
-                    <th>Jam Masuk</th>
-                    <th>Jam Keluar</th>
+                    <th>Jenis Izin</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($presensis as $presensi)
+                  @foreach($izins as $izin)
                     <tr>
-                     <td>{{$presensi->id_presensi}}</td>
+                     <td>{{$izin->id_izin}}</td>
                       <td>
                         <h2 class="table-avatar">
-                          <a>{{$presensi->nama}}</a>
+                          <a>{{$izin->nama}}</a>
                         </h2>
                       </td>
-                      <td class="text-center">{{$presensi->id_karyawan}}</td>
-                      <td>{{$presensi->tanggal}}</td>
-                      <td>{{$presensi->jam_msk}}</td>
-                      <td>{{$presensi->jam_klr}}</td>
+                      <td class="text-center">{{$izin->id_karyawan}}</td>
+                      <td>{{$izin->tanggal}}</td>
+                      <td>{{$izin->jenis_izin}}</td>
                     </tr>
                   @endforeach
                 </tbody>

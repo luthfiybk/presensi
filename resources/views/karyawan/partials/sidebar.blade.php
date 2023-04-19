@@ -8,6 +8,9 @@
         <li class="{{ ($title === 'Riwayat Presensi') ? 'active' : '' }}">
           <a href="/karyawan/riwayat-presensi"><i class="fas fa-tachometer-alt"></i> <span>Riwayat Presensi</span></a>
         </li>
+        <li class="{{ ($title === 'Pengajuan Izin') ? 'active' : '' }}">
+          <a href="/karyawan/pengajuan-izin"><i class="far fa-user-circle"></i> <span>Pengajuan Izin</span></a>
+        </li>
         <li class="{{ ($title === 'Detail Profil') ? 'active' : '' }}">
           <a href="/karyawan/profil"><i class="far fa-user-circle"></i> <span>Detail Profil</span></a>
         </li>

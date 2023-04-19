@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gedung;
+use App\Models\Izin;
 use App\Models\Karyawan;
 use App\Models\Presensi;
 use Carbon\Carbon;
@@ -46,5 +47,15 @@ class AdminController extends Controller
             'active' => 'Tambah Lokasi'
         ]);
 
+    }
+
+    public function getIzin(Request $request, Izin $izin){
+        $izin = Izin::all();
+
+        return view('admin.data-izin', [
+           'title' => 'Data Pengajuan Izin',
+           'izins' => $izin,
+           'active' => 'Data Pengajuan Izin' 
+        ]);
     }
 }

@@ -55,7 +55,7 @@
     </div>
     
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa2d58f6EeSUVcucZzy1WZ_d-1iQxTRSg&callback=initMap&v=weekly"
       defer
     ></script>
     {{-- <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script> --}}
