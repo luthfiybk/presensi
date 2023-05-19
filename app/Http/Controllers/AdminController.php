@@ -55,7 +55,7 @@ class AdminController extends Controller
 
     public function getIzin(Request $request, Izin $izin)
     {
-        $izin = Izin::all();
+        $izin = Izin::all()->paginate(5);
 
         return view('admin.data-izin', [
             'title' => 'Data Izin',

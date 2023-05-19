@@ -35,6 +35,7 @@ class RegisterController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
+        
         if ($validatedData['role'] == 'karyawan') {
             if (Karyawan::where('email', $validatedData['email'])->doesntExist()) {
                 Karyawan::create([

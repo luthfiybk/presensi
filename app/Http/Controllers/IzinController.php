@@ -62,7 +62,6 @@ class IzinController extends Controller
             'title' => 'Data Izin',
             'izins' => $izin,
             'active' => 'Data Izin',
-            'stts_izin' => 'Izin Disetujui'
         ]);
     }
 
