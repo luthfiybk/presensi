@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Karyawan;
+use Alert;
 
 class RegisterController extends Controller
 {
@@ -14,7 +15,7 @@ class RegisterController extends Controller
     {
         return view('register.index',[
             'title' => 'Register',
-            'active' => 'register'
+            'active' => 'Data User'
         ]);
     }
 
@@ -52,7 +53,6 @@ class RegisterController extends Controller
             }
         }
 
-        // redirect to login page
         return redirect('/admin/dashboard')->with('success','Register success, please login');
     } 
 }

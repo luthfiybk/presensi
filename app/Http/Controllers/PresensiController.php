@@ -8,6 +8,7 @@ use App\Models\Presensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 date_default_timezone_set("Asia/Jakarta");
 
 class PresensiController extends Controller
@@ -61,25 +62,10 @@ class PresensiController extends Controller
             }
             $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
             
-            return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
+            return redirect('/karyawan/riwayat-presensi')->Alert('success', 'Presensi sukses!');
         } else {
-            return redirect('/karyawan/presensi')->with('error', 'Presensi gagal!');
+            return redirect('/karyawan/presensi')->Alert('error', 'Presensi gagal!');
         }
-    
-        // $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->where('id_karyawan', auth()->user()->id_karyawan)->first();
-        // if($presensi == null) {
-        //     $presensi = Presensi::create([
-        //         'id_karyawan' => auth()->user()->id_karyawan,
-        //         'nama' => auth()->user()->name,
-        //         'tanggal' => date('Y-m-d'),
-        //         'jam_msk' => date('H:i:s'),
-        //         'latitude' => $validatedData['latitude'],
-        //         'longitude' => $validatedData['longitude']
-        //     ]);
-        // }
-        // $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
-
-        // return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
     }
 
     public function Pulang()

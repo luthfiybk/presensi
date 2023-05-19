@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('layouts.main')
 
 @section('container')
 <div class="page-wrapper">

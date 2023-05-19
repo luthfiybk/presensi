@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('izins', function (Blueprint $table) {
-            $table->id('id_izin');
+            $table->id();
             $table->string('id_karyawan');
             $table->string('nama_karyawan');
             $table->string('jenis_izin');
             $table->string('file_izin');
             $table->date('tanggal');
-            $table->string('stts_izin')->nullable();
+            $table->string('stts_izin')->default('Belum Diverifikasi');
             $table->timestamps();
         });
     }

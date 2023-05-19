@@ -5,11 +5,11 @@
         <li class="{{ ($title === 'Dashboard') ? 'active' : '' }}">
           <a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
         </li>
-        <li class="{{ ($title === 'Register') ? 'active' : '' }}">
-          <a href="/register"><i class="fas fa-book"></i> <span>Register</span></a>
+        <li class="{{ ($title === 'Data User') ? 'active' : '' }}">
+          <a href="/admin/data-user?id=karyawan"><i class="fas fa-book"></i> <span>Data User</span></a>
         </li>
-        <li class="{{ ($title === 'Data Pengajuan Izin') ? 'active' : '' }}">
-          <a href="/admin/data-izin"><i class="fas fa-book"></i> <span>Data Pengajuan Izin</span></a>
+        <li class="{{ ($title === 'Data Izin') ? 'active' : '' }}">
+          <a href="/admin/data-izin?id=unverified"><i class="fa fa-envelope"></i> <span>Data Izin</span></a>
         </li>
         <li class="{{ ($title === 'Tambah Lokasi') ? 'active' : '' }}">
           <a href="/admin/tambah-lokasi"><i class="fas fa-location-arrow"></i> <span>Tambah Lokasi</span></a>

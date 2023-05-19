@@ -9,7 +9,7 @@
           <div class="mt-5">
             <h3 class="page-title">Data Presensi</h3>
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"></li>
+              <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
               <li class="breadcrumb-item active">Data Presensi</li>
             </ul>
           </div>
@@ -24,27 +24,27 @@
               <table class="datatable table table-stripped">
                 <thead>
                   <tr>
-                    <th>No</th>
+                    <th class="text-center">No</th>
                     <th class="text-center">Nama</th>
                     <th class="text-center">ID Karyawan</th>
-                    <th>Tanggal</th>
-                    <th>Jam Masuk</th>
-                    <th>Jam Keluar</th>
+                    <th class="text-center">Tanggal</th>
+                    <th class="text-center">Jam Masuk</th>
+                    <th class="text-center">Jam Keluar</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($presensis as $presensi)
                     <tr>
-                     <td>{{$presensi->id_presensi}}</td>
-                      <td>
+                      <td class="text-center">{{$presensi->id}}</td>
+                      <td class="text-center">
                         <h2 class="table-avatar">
                           <a>{{$presensi->nama}}</a>
                         </h2>
                       </td>
                       <td class="text-center">{{$presensi->id_karyawan}}</td>
-                      <td>{{$presensi->tanggal}}</td>
-                      <td>{{$presensi->jam_msk}}</td>
-                      <td>{{$presensi->jam_klr}}</td>
+                      <td class="text-center">{{$presensi->tanggal}}</td>
+                      <td class="text-center">{{$presensi->jam_msk}}</td>
+                      <td class="text-center">{{$presensi->jam_klr}}</td>
                     </tr>
                   @endforeach
                 </tbody>

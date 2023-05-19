@@ -6,6 +6,13 @@
     <div class="page-header">
       <div class="row align-items-center">
         <div class="col">
+          <div class="mt-5">
+            <h3 class="page-title">Riwayat Presensi</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/karyawan/dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item active">Riwayat Presensi</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -13,7 +20,6 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-body">
-            <h3 style="text-align: center">Riwayat Presensi</h3>
             <div class="table-responsive">
               <table class="datatable table table-stripped">
                 <thead>

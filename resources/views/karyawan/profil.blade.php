@@ -8,7 +8,7 @@
         <div class="col">
           <h3 class="page-title">Profile</h3>
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+            <li class="breadcrumb-item"><a href="/karyawan/riwayat-presensi">Home</a></li>
             <li class="breadcrumb-item active">Profile</li>
           </ul>
         </div>
@@ -45,8 +45,3 @@
   </div>
 </div>
 @endsection
-        
-
-    
-    
-    

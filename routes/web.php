@@ -12,6 +12,7 @@ use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IzinController;
 use App\Http\Controllers\LocationController;
+use App\Models\Izin;
 use App\Models\Presensi;
 
 /*
@@ -43,19 +44,20 @@ Route::get('/karyawan/profil', function () {
         'karyawan' => Karyawan::where('email', auth()->user()->email)->first(),
     ]);
 })->middleware('auth', 'isKaryawan');
-
 Route::get('/karyawan/riwayat-presensi', [KaryawanController::class, 'index'])->middleware('auth', 'isKaryawan');
-
-// Route::resource('location', LocationController::class);
 Route::get('/karyawan/presensi', [PresensiController::class, 'index'])->middleware('auth', 'isKaryawan');
 Route::post('/karyawan/presensi', [PresensiController::class, 'Masuk'])->middleware('auth', 'isKaryawan');
-Route::patch('/karyawan/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
+Route::put('/karyawan/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
 Route::get('/karyawan/pengajuan-izin', [IzinController::class, 'index'])->middleware('auth', 'isKaryawan');
 Route::post('/karyawan/pengajuan-izin', [IzinController::class, 'postIzin'])->middleware('auth', 'isKaryawan');
+
 
 //Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware('auth', 'isAdmin');
 Route::get('/admin/tambah-lokasi', [AdminController::class, 'getLokasi'])->middleware('auth', 'isAdmin');
 Route::post('/admin/tambah-lokasi', [AdminController::class, 'tambahLokasi'])->middleware('auth', 'isAdmin');
-
-Route::get('/data', [LocationController::class, 'getDataJson']);
+Route::get('/admin/data-izin/', [IzinController::class, 'getIzin'])->middleware('auth', 'isAdmin');
+Route::get('/admin/data-izin/{id}', [IzinController::class, 'detailIzin'])->middleware('auth', 'isAdmin');
+Route::get('/admin/data-izin/{id}/verified', [IzinController::class, 'verified'])->name('verified')->middleware('auth', 'isAdmin');
+Route::get('/admin/data-izin/{id}/unverified', [IzinController::class, 'unverified'])->name('unverified')->middleware('auth', 'isAdmin');
+Route::get('/admin/data-user/', [AdminController::class, 'getAllUser'])->middleware('auth', 'isAdmin');

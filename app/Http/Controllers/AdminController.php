@@ -6,6 +6,7 @@ use App\Models\Gedung;
 use App\Models\Izin;
 use App\Models\Karyawan;
 use App\Models\Presensi;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,11 +21,13 @@ class AdminController extends Controller
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',
-            'presensis' => $presensi
+            'presensis' => $presensi,
+            'active' => 'Dashboard'
         ]);
     }
     
-    public function tambahLokasi(Request $request){
+    public function tambahLokasi(Request $request)
+    {
         $validatedData = $request->validate([
             'nama' => 'required',
             'latitude' => 'required',
@@ -40,7 +43,8 @@ class AdminController extends Controller
 
     public function getLokasi(Request $request)
     {
-        $gedung = Gedung::all();
+        $gedung = Gedung::all()->paginate(5);
+
         return view('admin.tambahLokasi', [
             'title' => 'Tambah Lokasi',
             'gedungs' => $gedung,
@@ -49,13 +53,24 @@ class AdminController extends Controller
 
     }
 
-    public function getIzin(Request $request, Izin $izin){
+    public function getIzin(Request $request, Izin $izin)
+    {
         $izin = Izin::all();
 
         return view('admin.data-izin', [
-           'title' => 'Data Pengajuan Izin',
-           'izins' => $izin,
-           'active' => 'Data Pengajuan Izin' 
+            'title' => 'Data Izin',
+            'izins' => $izin,
+            'active' => 'Data Izin' 
+        ]);
+    }
+
+    public function getAllUser(Request $request, User $user)
+    {
+        $user =  User::all();
+
+        return view('admin.data-user', [
+            'title' => 'Data User',
+            'users' => $user,
         ]);
     }
 }
