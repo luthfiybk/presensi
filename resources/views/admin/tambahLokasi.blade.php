@@ -34,20 +34,20 @@
                   <thead>
                     <tr>
                       <th class="text-center">Nama</th>
-                      <th>Latitude</th>
-                      <th>Longitude</th>
+                      <th class="text-center">Latitude</th>
+                      <th class="text-center">Longitude</th>
+                      <th class="text-center">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach($gedungs as $gedung)
                       <tr>
-                        <td>
-                          <h2 class="table-avatar">
-                            <a>{{$gedung->nama}}</a>
-                          </h2>
+                        <td class="text-center">{{$gedung->nama}}</td>
+                        <td class="text-center">{{$gedung->latitude}}</td>
+                        <td class="text-center">{{$gedung->longitude}}</td>
+                        <td class="text-center">
+                          <i class="fa-solid fa-trash" style="color: #e32400;"></i>
                         </td>
-                        <td>{{$gedung->latitude}}</td>
-                        <td>{{$gedung->longitude}}</td>
                       </tr>
                     @endforeach
                   </tbody>

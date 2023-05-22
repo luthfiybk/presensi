@@ -2,8 +2,8 @@
 
 @section('container')
 <div class="login-right-wrap">
-  <h1>Login</h1>
-  <p class="account-subtitle">Access to our dashboard</p>
+  <h1>SIPRES BUMNU Jember</h1>
+  <p class="account-subtitle">Login</p>
   <form action="/" method="POST">
     @csrf
     <div class="form-group">

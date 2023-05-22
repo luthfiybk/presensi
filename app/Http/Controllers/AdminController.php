@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function index(Request $request, Presensi $presensi)
     {
-        $presensi = Presensi::all();
+        $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())->get();
     
 
         return view('admin.dashboard', [
@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     public function getLokasi(Request $request)
     {
-        $gedung = Gedung::all()->paginate(5);
+        $gedung = Gedung::all();
 
         return view('admin.tambahLokasi', [
             'title' => 'Tambah Lokasi',
@@ -55,7 +55,7 @@ class AdminController extends Controller
 
     public function getIzin(Request $request, Izin $izin)
     {
-        $izin = Izin::all()->paginate(5);
+        $izin = Izin::paginate(5);
 
         return view('admin.data-izin', [
             'title' => 'Data Izin',
@@ -66,7 +66,7 @@ class AdminController extends Controller
 
     public function getAllUser(Request $request, User $user)
     {
-        $user =  User::all();
+        $user =  User::paginate(8);
 
         return view('admin.data-user', [
             'title' => 'Data User',

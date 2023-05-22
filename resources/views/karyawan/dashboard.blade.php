@@ -9,8 +9,6 @@
           <div class="mt-5">
             <h3 class="page-title">Riwayat Presensi</h3>
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/karyawan/dashboard">Dashboard</a></li>
-              <li class="breadcrumb-item active">Riwayat Presensi</li>
             </ul>
           </div>
         </div>

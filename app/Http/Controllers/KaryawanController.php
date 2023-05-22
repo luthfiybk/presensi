@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Karyawan;
 use App\Models\Presensi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Stevebauman\Location\Facades\Location;
 
 class KaryawanController extends Controller
@@ -20,7 +21,7 @@ class KaryawanController extends Controller
         if($request->has('search')){
             $presensi = Presensi::where('nama', 'like', '&' . $request->search . '%');
         } else {
-            $presensi = Presensi::where('id_karyawan', auth()->user()->id_karyawan)->paginate(8);
+            $presensi = Presensi::where('id_karyawan', auth()->user()->id_karyawan)->whereDate('created_at', Carbon::today()->toDateString())->get();
         }       
         return view('karyawan.dashboard', [
             'title' => 'Riwayat Presensi',

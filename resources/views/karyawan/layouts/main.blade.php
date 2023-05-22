@@ -62,14 +62,12 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa2d58f6EeSUVcucZzy1WZ_d-1iQxTRSg&callback=initMap&v=weekly"
       defer
     ></script>
-    {{-- <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=ck2OXUAJsF0iz999XGQ62jyXo8AXOVp7"></script> --}}
     <script src="{{ asset('assets/js/module/geopresensi.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/raphael/raphael.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
-    {{-- <script src="{{ asset('assets/js/chart.morris.js') }}"></script> --}}
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <script src="{{ asset('assets/js/moment.min.js') }}"></script>

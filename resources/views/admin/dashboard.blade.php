@@ -7,10 +7,8 @@
       <div class="row align-items-center">
         <div class="col">
           <div class="mt-5">
-            <h3 class="page-title">Data Presensi</h3>
+            <h3 class="page-title">Dashboard</h3>
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-              <li class="breadcrumb-item active">Data Presensi</li>
             </ul>
           </div>
         </div>
@@ -24,7 +22,6 @@
               <table class="datatable table table-stripped">
                 <thead>
                   <tr>
-                    <th class="text-center">No</th>
                     <th class="text-center">Nama</th>
                     <th class="text-center">ID Karyawan</th>
                     <th class="text-center">Tanggal</th>
@@ -35,7 +32,6 @@
                 <tbody>
                   @foreach($presensis as $presensi)
                     <tr>
-                      <td class="text-center">{{$presensi->id}}</td>
                       <td class="text-center">
                         <h2 class="table-avatar">
                           <a>{{$presensi->nama}}</a>

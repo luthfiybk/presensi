@@ -62,9 +62,9 @@ class PresensiController extends Controller
             }
             $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
             
-            return redirect('/karyawan/riwayat-presensi')->Alert('success', 'Presensi sukses!');
+            return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
         } else {
-            return redirect('/karyawan/presensi')->Alert('error', 'Presensi gagal!');
+            return redirect('/karyawan/presensi')->with('error', 'Presensi gagal!');
         }
     }
 
