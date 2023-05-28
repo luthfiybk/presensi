@@ -6,7 +6,7 @@ use App\Models\Izin;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use RealRashid\SweetAlert\Facades\Alert;
+use Alert;
 
 class IzinController extends Controller
 {

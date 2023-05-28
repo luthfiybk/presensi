@@ -19,6 +19,7 @@
   </head>
 
   <body>
+    @include('sweetalert::alert')
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
