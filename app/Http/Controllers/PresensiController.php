@@ -8,7 +8,7 @@ use App\Models\Presensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
+use Alert;
 date_default_timezone_set("Asia/Jakarta");
 
 class PresensiController extends Controller
