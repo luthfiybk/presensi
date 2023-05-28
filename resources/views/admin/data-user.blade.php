@@ -9,7 +9,7 @@
           <div class="mt-5">
             <h3 class="page-title">Data User</h3>
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/admin/dashboard">home</a></li>
+              <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
               <li class="breadcrumb-item active">Data User</li>
             </ul>
           </div>

@@ -34,6 +34,11 @@
                   <div class="form-group">
                     <label>File Pengajuan Izin</label>
                     <input type="file" class="form-control" id="file_izin" name="file_izin" >
+                    @error('file_izin')
+                      <div class="alert alert-danger">
+                        {{ $message }}
+                      </div>
+                    @enderror
                   </div>
                   <button class="btn btn-primary" type="submit">Konfirmasi</button>
                 </form>

@@ -51,7 +51,7 @@ class IzinController extends Controller
 
         $izin = Izin::whereDate('tanggal', '=', date('Y-m-d'))->first();
 
-
+        Alert::success('Berhasil', 'Izin berhasil diajukan!');
         return redirect('/karyawan/riwayat-presensi')->withSuccess('Pengajuan izin berhasil diajukan!');
     }
 

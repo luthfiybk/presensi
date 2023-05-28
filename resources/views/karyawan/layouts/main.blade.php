@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    @include('sweetalert::alert')
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}" />
   </head>
@@ -58,6 +57,7 @@
       @yield('container')
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa2d58f6EeSUVcucZzy1WZ_d-1iQxTRSg&callback=initMap&v=weekly"
       defer

@@ -8,7 +8,7 @@
         <div class="row align-items-center">
           <div class="col">
             <div class="mt-5">
-                <h3 class="page-title">Register</h3>
+                <h3 class="page-title">Tambah User</h3>
             </div>
           </div>
         </div>

@@ -62,8 +62,10 @@ class PresensiController extends Controller
             }
             $presensi = Presensi::whereDate('tanggal', '=', date('Y-m-d'))->first();
             
+            Alert::success('Berhasil', 'Presensi berhasil dilakukan!');
             return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
         } else {
+            Alert::error('Gagal', 'Presensi gagal!');
             return redirect('/karyawan/presensi')->with('error', 'Presensi gagal!');
         }
     }
@@ -76,6 +78,7 @@ class PresensiController extends Controller
 
         Presensi::whereDate('tanggal', '=' , date('Y-m-d'))->update($data);
 
+        Alert::success('Berhasil', 'Presensi berhasil dilakukan!');
         return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
     }
 }
