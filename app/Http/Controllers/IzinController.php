@@ -78,13 +78,14 @@ class IzinController extends Controller
 
     public function verified($id)
     {
-        Alert::success("Berhasil", "Izin Disetujui");
+        Alert::success("Berhasil", "Status Berhasil Diubah");
         $verified = Izin::where('id', $id)->update(['stts_izin' => 'Izin Disetujui']);
         return redirect('/admin/data-izin?id=unverified')->withSuccess('Izin Disetujui');
     }
 
     public function unverified($id)
     {
+        Alert::success("Berhasil", "Status Berhasil Diubah");
         $unverified = Izin::where('id', $id)->update(['stts_izin' => 'Izin Tidak Disetujui']);
         return redirect('/admin/data-izin?id=unverified')->withSuccess('Izin Tidak Disetujui');
     }

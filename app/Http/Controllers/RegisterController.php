@@ -54,6 +54,7 @@ class RegisterController extends Controller
             }
         }
 
+        Alert::success('Berhasil', 'User Berhasil Ditambahkan!');
         return redirect('/admin/dashboard')->with('success','Register success, please login');
     } 
 }
