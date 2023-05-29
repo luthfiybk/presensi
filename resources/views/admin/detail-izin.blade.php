@@ -58,23 +58,33 @@
                   </div>
               </div>
             </div>
-            @csrf @method('put')
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                    <a href="{{ route('verified', $izin->id) }}" style="btn btn-primary" type="submit">
-                                        <button class="btn btn-primary">
-                                            Setujui
-                                        </button>
-                                    </a>
-                                    <a href="{{ route('unverified', $izin->id) }}" style="btn btn-alert" type="submit">
-                                        <button class="btn btn-warning">
-                                            Tidak Disetujui
-                                        </button>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
+            @if($izin->stts_izin === 'Izin Disetujui' && $izin->stts_izin === 'Izin Tidak Disetujui')
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <h3>Izin Telah Diverifikasi</h3>
+                  </div>
+                </div>
+              </div>
+            @elseif($izin->stts_izin === 'Belum Diverifikasi')
+              @csrf @method('put')
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                      <a href="{{ route('verified', $izin->id) }}" style="btn btn-primary" type="submit">
+                                          <button class="btn btn-primary">
+                                              Setujui
+                                          </button>
+                                      </a>
+                                      <a href="{{ route('unverified', $izin->id) }}" style="btn btn-alert" type="submit">
+                                          <button class="btn btn-warning">
+                                              Tidak Disetujui
+                                          </button>
+                                      </a>
+                              </div>
+                          </div>
+                      </div>
+            @endif
             @endforeach
           </div>
         </div>

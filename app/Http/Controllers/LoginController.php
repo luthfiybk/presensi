@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Alert;
 
 class LoginController extends Controller
 {
@@ -28,16 +29,13 @@ class LoginController extends Controller
         if (auth()->attempt($validatedData)) {
             $request->session()->regenerate();
             if (auth()->user()->role == 'admin') {
-                Alert::success('Berhasil', 'Login Berhasil!');
                 return redirect('/admin/dashboard')->content('admin.dashboard');
             } else if (auth()->user()->role == 'karyawan') {
-                Alert::success('Berhasil', 'Login Berhasil!');
                 return redirect('/karyawan/riwayat-presensi')->content('karyawan.dashboard');
             }
         }
 
         // redirect to login page
-        Alert::error('Gagal', 'Login Gagal!');
         return back()->with('error','Login failed, please try again');
     }
 
