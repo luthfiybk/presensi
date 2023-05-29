@@ -45,7 +45,7 @@ class AdminController extends Controller
     {
         $gedung = Gedung::all();
 
-        return view('admin.tambahLokasi', [
+        return view('admin.tambah-lokasi', [
             'title' => 'Tambah Lokasi',
             'gedungs' => $gedung,
             'active' => 'Tambah Lokasi'

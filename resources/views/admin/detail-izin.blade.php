@@ -62,7 +62,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <h3>Izin Telah Diverifikasi</h3>
+                    <label>Izin Telah Diverifikasi</label>
                   </div>
                 </div>
               </div>

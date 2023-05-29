@@ -72,7 +72,8 @@ class IzinController extends Controller
         // dd($izin);
         return view('admin.detail-izin', [
             'title' => 'Detail Izin',
-            'izins' => $izin
+            'izins' => $izin,
+            'active' => 'Data Izin'
         ]);
     }
 
