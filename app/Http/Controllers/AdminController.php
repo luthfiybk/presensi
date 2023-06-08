@@ -16,8 +16,9 @@ class AdminController extends Controller
 
     public function index(Request $request, Presensi $presensi)
     {
-        $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())->get();
-    
+        $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())
+        ->get();
+        $karyawanPresensi = DB::table('users');
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',

@@ -20,8 +20,6 @@ function initMap() {
                         })
                         marker.setMap(map)
         
-                        // infoWindow.setPosition(pos);
-                        // infoWindow.setContent("Lokasi Anda");
                         infoWindow.open(map);
                         map.setCenter(pos);
         

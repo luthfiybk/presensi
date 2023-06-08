@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>{{$title}}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://admintokopangan.ptppi.co.id/images/bumnu.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" />
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}" />
@@ -23,8 +23,8 @@
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
-          <a href="/karyawan/riwayat-presensi" class="logo"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" width="50" height="70" alt="logo" /> <span class="logoclass">SIPRES</span> </a>
-          <a href="/karyawan/riwayat-presensi" class="logo logo-small"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" alt="Logo" width="30" height="30" /> </a>
+          <a href="/karyawan/riwayat-presensi" class="logo"> <img src="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" width="50" height="70" alt="logo" /> <span class="logoclass"></span> </a>
+          <a href="/karyawan/riwayat-presensi" class="logo logo-small"> <img src="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" alt="Logo" width="30" height="30" /> </a>
         </div>
         <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
         <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
@@ -32,21 +32,16 @@
           <li class="nav-item dropdown has-arrow">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               @if (Auth::user()->photo == null)
-                <span class="user-img"><img class="rounded-circle" src="{{ asset('assets/img/profiles/user-avatar.png') }}" width="31" alt="Avatar" /></span>  
+                <span class="user-img"><img class="rounded-circle" src="{{ asset('assets/img/profiles/user-avatar.png') }}" width="31" alt="Avatar" /></span> 
               @else
                 <span class="user-img"><img class="rounded-circle" src="{{ asset('img/photo/'.Auth::user()->photo) }}" width="31" alt="Avatar" /></span>
               @endif
+              <span>{{ auth()->user()->name }}</span>
+              <span class="text-muted mb-0">Karyawan</span>
             </a>
             <div class="dropdown-menu">
-              <div class="user-header">
-                <div class="avatar avatar-sm"><img src="{{ asset('assets/img/profiles/user-avatar.png') }}" alt="User Image" class="avatar-img rounded-circle" /></div>
-                <div class="user-text">
-                  <h6>{{ auth()->user()->name }}</h6>
-                  <p class="text-muted mb-0">Karyawan</p>
-                </div>
-              </div>
-              <a class="dropdown-item ml-3 mt-1" href="/karyawan/profil">My Profile</a>
               <form action="/logout" method="POST" class="m-3">
+                <a class="dropdown-item ml-0 mt-1" href="/karyawan/profil">My Profile</a>
                 @csrf
                 <button type="submit" class="dropdown-item">Logout</button>
               </form>

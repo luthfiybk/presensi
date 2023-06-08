@@ -36,7 +36,6 @@
                       <th class="text-center">Nama</th>
                       <th class="text-center">Latitude</th>
                       <th class="text-center">Longitude</th>
-                      <th class="text-center">Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -45,9 +44,6 @@
                         <td class="text-center">{{$gedung->nama}}</td>
                         <td class="text-center">{{$gedung->latitude}}</td>
                         <td class="text-center">{{$gedung->longitude}}</td>
-                        <td class="text-center">
-                          <i class="fa-solid fa-trash" style="color: #e32400;"></i>
-                        </td>
                       </tr>
                     @endforeach
                   </tbody>

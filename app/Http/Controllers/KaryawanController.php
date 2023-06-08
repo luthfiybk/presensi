@@ -26,7 +26,8 @@ class KaryawanController extends Controller
         return view('karyawan.dashboard', [
             'title' => 'Riwayat Presensi',
             'presensis' => $presensi,
-            'active' => 'Riwayat Presensi'
+            'active' => 'Riwayat Presensi',
+            'active' => ''
         ]);
     }
 
@@ -45,7 +46,8 @@ class KaryawanController extends Controller
     {
         return view('karyawan.presensi', [
             'title' => 'Presensi',
-            'active' => 'presensi'
+            'active' => 'presensi',
+            'active' => ''
         ]);
     }
 

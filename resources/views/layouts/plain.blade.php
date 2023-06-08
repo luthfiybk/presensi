@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 	<title>{{$title}}</title>
-	<link rel="shortcut icon" type="image/x-icon" href="https://admintokopangan.ptppi.co.id/images/bumnu.png">
+	<link rel="shortcut icon" type="image/x-icon" href="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png">
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
@@ -19,7 +19,7 @@
 		<div class="login-wrapper">
 			<div class="container">
 				<div class="loginbox">
-					<div class="login-left"> <img class="img-fluid" src="https://admintokopangan.ptppi.co.id/images/bumnu.png" alt="Logo"> </div>
+					<div class="login-left"> <img class="img-fluid" src="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" alt="Logo"> </div>
 					<div class="login-right">
             			@yield('container')
 					</div>

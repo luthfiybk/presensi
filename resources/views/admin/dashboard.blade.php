@@ -27,6 +27,8 @@
                     <th class="text-center">Tanggal</th>
                     <th class="text-center">Jam Masuk</th>
                     <th class="text-center">Jam Keluar</th>
+                    <th class="text-center">Latitude</th>
+                    <th class="text-center">Longitude</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,8 @@
                       <td class="text-center">{{$presensi->tanggal}}</td>
                       <td class="text-center">{{$presensi->jam_msk}}</td>
                       <td class="text-center">{{$presensi->jam_klr}}</td>
+                      <td class="text-center">{{$presensi->latitude}}</td>
+                      <td class="text-center">{{$presensi->longitude}}</td>
                     </tr>
                   @endforeach
                 </tbody>

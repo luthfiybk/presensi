@@ -42,6 +42,7 @@ Route::get('/karyawan/profil', function () {
     return view('karyawan.profil', [
         'title' => 'Detail Profil',
         'karyawan' => Karyawan::where('email', auth()->user()->email)->first(),
+        'active' => ''
     ]);
 })->middleware('auth', 'isKaryawan');
 Route::get('/karyawan/riwayat-presensi', [KaryawanController::class, 'index'])->middleware('auth', 'isKaryawan');

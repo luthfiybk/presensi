@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>{{$title}}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://admintokopangan.ptppi.co.id/images/bumnu.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" />
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}" />
@@ -21,8 +21,8 @@
     <div class="main-wrapper">
       <div class="header">
         <div class="header-left">
-          <a href="/" class="logo"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" width="50" height="70" alt="logo" /> <span class="logoclass">SIPRES</span> </a>
-          <a href="/" class="logo logo-small"> <img src="https://admintokopangan.ptppi.co.id/images/bumnu.png" alt="Logo" width="30" height="30" /> </a>
+          <a href="/" class="logo"> <img src="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" width="50" height="70" alt="logo" /> <span class="logoclass"></span> </a>
+          <a href="/" class="logo logo-small"> <img src="https://www.ptppi.co.id/wp-content/uploads/2022/01/PPI-ID-Food.png" alt="Logo" width="30" height="30" /> </a>
         </div>
         <a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
         <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
