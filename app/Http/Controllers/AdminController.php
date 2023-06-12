@@ -16,9 +16,18 @@ class AdminController extends Controller
 
     public function index(Request $request, Presensi $presensi)
     {
-        $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())
-        ->get();
-        $karyawanPresensi = DB::table('users');
+        // $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())
+        // ->get();
+        $today = Carbon::today()->toDateString();
+
+        $presensi = Karyawan::leftJoinSub(
+                                    Presensi::select('id_karyawan', 'tanggal', 'jam_msk', 'jam_klr', 'latitude', 'longitude')
+                                            ->whereDate('presensis.created_at', '=', $today),
+                                    'presensis', 'karyawans.id_karyawan', '=', 'presensis.id_karyawan' 
+                                )
+                            ->select('karyawans.nama', 'karyawans.id_karyawan', 'presensis.tanggal', 'presensis.jam_msk', 'presensis.jam_klr', 'presensis.latitude', 'presensis.longitude')
+                            ->orderBy('karyawans.id', 'asc')
+                            ->get();
 
         return view('admin.dashboard', [
             'title' => 'Dashboard',

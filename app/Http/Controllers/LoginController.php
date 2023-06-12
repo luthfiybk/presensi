@@ -29,13 +29,16 @@ class LoginController extends Controller
         if (auth()->attempt($validatedData)) {
             $request->session()->regenerate();
             if (auth()->user()->role == 'admin') {
+                Alert::success('Berhasil', 'Anda berhasil masuk sebagai Admin');
                 return redirect('/admin/dashboard')->content('admin.dashboard');
             } else if (auth()->user()->role == 'karyawan') {
+                Alert::success('Berhasil', 'Anda berhasil masuk sebagai Karyawan');
                 return redirect('/karyawan/riwayat-presensi')->content('karyawan.dashboard');
             }
         }
 
         // redirect to login page
+        Alert::error('Gagal', 'ID Karyawan atau Password anda salah!');
         return back()->with('error','Login failed, please try again');
     }
 

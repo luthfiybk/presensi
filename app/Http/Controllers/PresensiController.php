@@ -16,18 +16,21 @@ class PresensiController extends Controller
 
 
 
-    public function index()
+    public function presensiMasuk()
     {
-        return view('karyawan.presensi', [
+        return view('karyawan.presensi-masuk', [
             'title' => 'Presensi',
             'active' => 'Presensi'
         ]);
         
     }
 
-    public function getData(Karyawan $karyawan)
+    public function presensiPulang()
     {
-        
+        return view('karyawan.presensi-pulang', [
+            'title' => 'Presensi',
+            'active' => 'Presensi'
+        ]);
     }
 
     public function Masuk(Request $request)
