@@ -8,6 +8,7 @@ use App\Models\Presensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Stevebauman\Location\Facades\Location;
+date_default_timezone_set("Asia/Jakarta");
 
 class KaryawanController extends Controller
 {
@@ -18,11 +19,8 @@ class KaryawanController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('search')){
-            $presensi = Presensi::where('nama', 'like', '&' . $request->search . '%');
-        } else {
-            $presensi = Presensi::where('id_karyawan', auth()->user()->id_karyawan)->whereDate('created_at', Carbon::today()->toDateString())->get();
-        }       
+        $presensi = Presensi::where('id_karyawan', auth()->user()->id_karyawan)->whereDate('created_at', Carbon::today()->toDateString())->get();   
+
         return view('karyawan.dashboard', [
             'title' => 'Riwayat Presensi',
             'presensis' => $presensi,
@@ -51,18 +49,4 @@ class KaryawanController extends Controller
         ]);
     }
 
-    public function edit(Karyawan $karyawan)
-    {
-        //
-    }
-
-    public function update(Request $request, Karyawan $karyawan)
-    {
-        //
-    }
-
-    public function destroy(Karyawan $karyawan)
-    {
-        //
-    }
 }

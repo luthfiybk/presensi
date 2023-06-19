@@ -30,6 +30,8 @@
           <li class="nav-item dropdown has-arrow">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <span class="user-img"><img class="rounded-circle" src="{{ asset('assets/img/profiles/user-avatar.png') }}" width="31" alt="Avatar" /></span>
+              <span>{{ auth()->user()->name }}</span>
+              <span class="text-muted mb-0">Admin</span>
             </a>
             <div class="dropdown-menu">
               <div class="user-header">

@@ -38,8 +38,7 @@ class LoginController extends Controller
         }
 
         // redirect to login page
-        Alert::error('Gagal', 'ID Karyawan atau Password anda salah!');
-        return back()->with('error','Login failed, please try again');
+        a
     }
 
     // make logout method

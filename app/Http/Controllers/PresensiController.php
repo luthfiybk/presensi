@@ -13,9 +13,6 @@ date_default_timezone_set("Asia/Jakarta");
 
 class PresensiController extends Controller
 {
-
-
-
     public function presensiMasuk()
     {
         return view('karyawan.presensi-masuk', [
@@ -68,7 +65,7 @@ class PresensiController extends Controller
             Alert::success('Berhasil', 'Presensi berhasil dilakukan!');
             return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');
         } else {
-            Alert::error('Gagal', 'Presensi gagal!');
+            Alert::error('Gagal', 'Anda mungkin di luar jangkauan!');
             return redirect('/karyawan/presensi')->with('error', 'Presensi gagal!');
         }
     }
@@ -79,7 +76,9 @@ class PresensiController extends Controller
             'jam_klr' => date('H:i:s')
         ];
 
-        Presensi::whereDate('tanggal', '=' , date('Y-m-d'))->update($data);
+        Presensi::where('nama', '=', auth()->user()->name)
+        ->where('id_karyawan', '=', auth()->user()->id_karyawan)
+        ->whereDate('tanggal', '=' , date('Y-m-d'))->update($data);
 
         Alert::success('Berhasil', 'Presensi berhasil dilakukan!');
         return redirect('/karyawan/riwayat-presensi')->with('success', 'Presensi sukses!');

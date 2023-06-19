@@ -10,14 +10,14 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Alert;
+date_default_timezone_set("Asia/Jakarta");
 
 class AdminController extends Controller
 {
 
     public function index(Request $request, Presensi $presensi)
     {
-        // $presensi = Presensi::whereDate('created_at', Carbon::today()->toDateString())
-        // ->get();
         $today = Carbon::today()->toDateString();
 
         $presensi = Karyawan::leftJoinSub(
@@ -44,9 +44,9 @@ class AdminController extends Controller
             'longitude' => 'required'
         ]);
 
-
         Gedung::create($validatedData);
         
+        Alert::success('Berhasil', 'Berhasil menambahkan lokasi!');
         return redirect('/admin/tambah-lokasi')->with('success', 'Tambah Lokasi berhasil!');
 
     }
@@ -76,7 +76,7 @@ class AdminController extends Controller
 
     public function getAllUser(Request $request, User $user)
     {
-        $user =  User::paginate(8);
+        $user =  User::all();
 
         return view('admin.data-user', [
             'title' => 'Data User',
