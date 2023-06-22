@@ -17,6 +17,7 @@
                         <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i><span>Presensi</span></button>
                     </div>
                     <div class="location" style="text-align: center">
+                        <input name="id_karyawan" type="hidden" required style="border: none; background-color: #fff">
                         <input name="latitude" type="hidden" required style="border: none; background-color: #fff">
                         <input name="longitude" type="hidden" required style="border: none; background-color: #fff">
                     </div>

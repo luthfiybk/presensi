@@ -51,7 +51,7 @@ Route::get('/karyawan/presensi', [PresensiController::class, 'presensiMasuk'])->
 Route::post('/karyawan/presensi', [PresensiController::class, 'Masuk'])->middleware('auth', 'isKaryawan');
 Route::put('/karyawan/presensi/{presensi}', [PresensiController::class, 'Pulang'])->middleware('auth', 'isKaryawan');
 Route::get('/karyawan/pengajuan-izin', [IzinController::class, 'index'])->middleware('auth', 'isKaryawan');
-Route::post('/karyawan/pengajuan-izin', [IzinController::class, 'postIzin'])->middleware('auth', 'isKaryawan');
+Route::get('/karyawan/pengajuan-izin', [IzinController::class, 'postIzin'])->middleware('auth', 'isKaryawan');
 
 
 //Admin

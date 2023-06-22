@@ -38,7 +38,6 @@ class LoginController extends Controller
         }
 
         // redirect to login page
-        a
     }
 
     // make logout method

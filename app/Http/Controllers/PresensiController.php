@@ -32,7 +32,6 @@ class PresensiController extends Controller
 
     public function Masuk(Request $request)
     {   
-        
         $validatedData = $request->validate([
             'latitude' => 'required',
             'longitude' => 'required'
